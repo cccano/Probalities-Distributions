@@ -1,0 +1,30 @@
+########
+bernoulli <- function(n,x,p){
+        q <- 1-p
+        b <- p^x*q^(n-x)
+        f <- factorial(n)/(factorial(x)*factorial(n-x))
+        f*b
+}
+
+r <- 0
+ber <- function(n,x,p){
+        for(i in 0:x){
+                s <- bernoulli(n,i,p)
+                r <- sum(s,r)
+                print(r)
+                
+        }
+}
+
+#####
+poisso_dis <- function(x,l){
+        ((2.7183^-l)*l^x)/factorial(x)
+}
+
+c <- 0:n
+r <- 0
+for(i in c){
+        s <- poisso_dis(i,5)
+        r <- sum(r,s)
+        return(r)
+}
